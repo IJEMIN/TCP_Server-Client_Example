@@ -5,17 +5,17 @@ public class Server {
 	public static void main (String args[]) throws Exception
 	{
 		
-		int portNumber = 2356;
+		int portNumber = 2500;
 		String messagesFromClient = null;
 		String messagesToClient = null;
 		
-		//클라이언트가 접속하는 소켓 생성
 		ServerSocket wellcomeSocket = new ServerSocket(portNumber);
 		
 		System.out.println("SERVER PORT NUMBER: " + portNumber);
 		
 		
 		while(true) {
+			
 			
 			
 			//연결이 되면 connectionSocket에 new Socket 할당, 연결안되면 메소드는 block 되어 있다.
@@ -40,7 +40,7 @@ public class Server {
 			System.out.println("FROM Clinet: " +  messagesFromClient);
 			
 			
-			messagesToClient = messagesFromClient;
+			messagesToClient = messagesFromClient + '\n';
 			
 			System.out.println("SERVER MESSAGE to Client (ECO): " + messagesToClient);
 			
